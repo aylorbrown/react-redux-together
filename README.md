@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Counter as a React-Redux Application 
 
-## Available Scripts
 
-In the project directory, you can run:
+### Node modules you need! 
+- `npm install redux`
+- `npm install react-dedux`
 
-### `npm start`
+### Conventions (what files to create and put your code in)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Redux 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- `actions.js` - actions constants and your action creator functions 
+- `reducers.js`  (or a folder) - import your actions and define reducer functions 
+- 'CounterApp.js` - define the store so that the React app can use it 
 
-### `npm test`
+### React 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### "Dumb components" 
+- `components/` - holds all your dumb components 
+- They know nothing about Redux
+- The accept props 
+    - What do React Components do to props? 
+        - show the props
+        - use props as event handlers 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### "Smart Containers"
+- `containers/`  - holds all your smart containers 
+- They know all about Redux
+    - have access to redux state
+    - can call the store's dispatch
+- They don't know about React 
+    - they import your dumb components 
+- They wire together your dumb components and redux's `state` and `dispatch`
+    - define `mapStateToProps` function 
+    - define `mapDispatchToProps` function 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
